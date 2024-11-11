@@ -102,7 +102,7 @@ const Login = () => {
                 </div>
             </form>
 
-            {message && <div className="my-5 text-center text-sm text-red-500">{message}<div/>}
+            {message && <div className="my-5 text-center text-sm text-red-500">{message}</div>}
 
             <div className="text-center text-sm mb-5">
                 <Link href="/auth/reset-password"
