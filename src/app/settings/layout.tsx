@@ -15,22 +15,22 @@ const subNavigation = [
     {
         name:"プロフィール",
         icon: UserCircleIcon,
-        href: "/setting/profile",
+        href: "/settings/profile",
     },
     {
         name:"メールアドレス",
         icon: EnvelopeIcon,
-        href: "/setting/email",
+        href: "/settings/email",
     },
     {
         name:"パスワード",
         icon: KeyIcon,
-        href: "/setting/password",
+        href: "/settings/password",
     },
     {
         name:"ログアウト",
         icon: ArrowLeftOnRectangleIcon,
-        href: "/setting/logaut",
+        href: "/settings/logout",
     },
 ]
 

@@ -3,7 +3,7 @@ import "./globals.css"
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import type { Database } from '../../lib/database.types'
-import { DivideIcon } from '@heroicons/react/16/solid'
+
 
 const home = async () => {
   const supabase = createServerComponentClient<Database>({
