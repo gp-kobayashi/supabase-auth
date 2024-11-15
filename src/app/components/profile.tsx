@@ -155,7 +155,7 @@ const Profile = () => {
 
                     {/* 自己紹介 */}
                     <div className="mb-5">
-                        <div className="text-sm mb-1 fomt-bold">自己紹介</div>
+                        <div className="text-sm mb-1 font-bold">自己紹介</div>
                         <textarea
                          className="border rounded-md w-full py-2 px-3 focus:outline-none focus:border-sky-500"
                          placeholder="自己紹介"
