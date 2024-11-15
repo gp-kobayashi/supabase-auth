@@ -19,7 +19,7 @@ const Navigation =({ session, profile } : {
         setUser({
             id: session ? session.user.id : "",
             email: session ? session.user.email! :"",
-            name: session && profile ? profile.introduce : "",
+            name: session && profile ? profile.name : "",
             introduce: session && profile ? profile.introduce: "",
             avatar_url: session && profile ? profile.avatar_url: "",
         })
