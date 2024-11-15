@@ -26,7 +26,7 @@ const Profile = () => {
     const [avatar, setAvatar] = useState<File | null>(null)
     const [message, setMessage] = useState("")
     const [fileMessage, setFileMessage] =useState("")
-    const [avatarUrl, setAvatarurl] = useState("/default.png")
+    const [avatarUrl, setAvatarUrl] = useState("/default.png")
     const { user } = useStore()
     
     const {
@@ -43,7 +43,7 @@ const Profile = () => {
 
     useEffect(()=>{
         if(user && user.avatar_url){
-            setAvatarurl(user.avatar_url)
+            setAvatarUrl(user.avatar_url)
         }
     },[user])
 
@@ -56,8 +56,8 @@ const Profile = () => {
             return
         }
 
-        const fileSize = files[0]?.size / 1024 / 1024
-        const fileType = files[0]?.type
+        const fileSize = files[0]?.size / 1024 / 1024 //size in MB
+        const fileType = files[0]?.type //MIME type of the file
 
         if(fileSize > 2){
             setFileMessage("画像サイズを2MB以下にする必要があります")
@@ -81,14 +81,14 @@ const Profile = () => {
             if(avatar){
                 const { data: storageData, error: storageError } = await supabase.storage
                     .from("profile")
-                    .update(`${user.id}/${uuidv4()}`,avatar)
+                    .upload(`${user.id}/${uuidv4()}`,avatar)
                 
                     if(storageError){
                         setMessage("エラーが発生しました" + storageError.message)
                         return
                     }
 
-                    if(avatarUrl){
+                    if(avatar_url){
                         const fileName = avatar_url.split("/").slice(-1)[0]
                         await supabase.storage.from("profile").remove([`${user.id}/${fileName}`])
                     }
@@ -119,7 +119,7 @@ const Profile = () => {
             setMessage("エラーが発生しました" + error)
             return
         } finally{
-            setLoading(true)
+            setLoading(false)
             router.refresh()
         }
     }
