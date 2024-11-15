@@ -8,7 +8,6 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import Loading from "@/app/loading"
 import * as z from "zod"
 import type { Database } from "../../../lib/database.types"
-import { DivideIcon } from "@heroicons/react/16/solid"
 type Schema = z.infer<typeof schema>
 
 const schema = z

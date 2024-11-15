@@ -1,7 +1,6 @@
 'use client'
 
 import "./globals.css"
-import React from 'react'
 
 const NotFound = () => {
   return (
